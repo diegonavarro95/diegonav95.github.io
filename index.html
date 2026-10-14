@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Personal - Diego Emiliano Navarro Arellano</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --escom-blue: #0A2240;      
+            --ipn-guinda: #7A162B;      
+            --light-bg: #F0F2F5;        
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        p, li {
+            text-align: justify;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--escom-blue) 0%, #1A3A63 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.8rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: var(--ipn-guinda);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(122, 22, 43, 0.4);
+        }
+
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: var(--escom-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--ipn-guinda);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--ipn-guinda);
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        section:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        section h3 {
+            color: var(--escom-blue);
+            font-size: 1.6rem;
+            border-left: 4px solid var(--ipn-guinda);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hobbies-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .hobbies-gallery div {
+            background: var(--light-bg);
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 2px dashed #CBD5E1;
+            color: #94A3B8;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px;
+            transition: var(--transition);
+        }
+
+        .hobbies-gallery div:hover {
+            border-color: var(--escom-blue);
+            background: #E2E8F0;
+        }
+
+        .hobbies-gallery i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--escom-blue);
+        }
+
+        .downloads-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-download {
+            background-color: var(--escom-blue);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-download:hover {
+            background-color: var(--white);
+            color: var(--escom-blue);
+            border-color: var(--escom-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(10, 34, 64, 0.2);
+        }
+
+        .btn-download.guinda {
+            background-color: var(--ipn-guinda);
+        }
+        
+        .btn-download.guinda:hover {
+            background-color: var(--white);
+            color: var(--ipn-guinda);
+            border-color: var(--ipn-guinda);
+            box-shadow: 0 5px 15px rgba(122, 22, 43, 0.2);
+        }
+
+        footer {
+            background-color: var(--escom-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1rem 1.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hobbies-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .downloads-container {
+                flex-direction: column;
+            }
+
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <img src="foto.png" alt="Diego Navarro" class="profile-img">
+        <h1>Diego Emiliano Navarro Arellano</h1>
+        <h2>Estudiante de Ingeniería en Sistemas Computacionales | ESCOM - IPN</h2>
+        
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@ogelboss95sw" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com/ogelboss95sw" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/navarro-arellano-diego-emiliano-8889443b4/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/share/19hMnt5Azy/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:dnavarroa2000@alumno.ipn.mx" title="Enviar Correo"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#criptografia">Criptografía</a></li>
+            <li><a href="#documentos">Documentos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        
+        <!-- Formación Académica -->
+        <section id="formacion">
+            <h3>Formación Académica</h3>
+            <ul>
+                <li><strong>Instituto Politécnico Nacional (IPN) - ESCOM</strong><br>
+                Actualmente curso la carrera de Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo.</li>
+                <li><strong>CECyT 8 "Narciso Bassols"</strong><br>
+                Egresado como Técnico en Computación, donde adquirí mis bases lógicas y de programación.</li>
+            </ul>
+        </section>
+
+        <!-- Hobbies -->
+        <section id="hobbies">
+            <h3>Mis Hobbies</h3>
+            <p>Fuera de la programación y el entorno académico, me dedico a diversas actividades que me ayudan a mantener un equilibrio y fomentar mi creatividad. Entre mis pasatiempos favoritos se encuentran:</p>
+            <ul>
+                <li><strong>Videojuegos:</strong> Disfruto de explorar mundos interactivos, superando retos de lógica y estrategia.</li>
+                <li><strong>Coleccionar LEGOs:</strong> Me apasiona la paciencia y el detalle que requiere ensamblar piezas para formar estructuras complejas.</li>
+                <li><strong>Cursos de Google:</strong> Siempre estoy en la búsqueda de expandir mis conocimientos tecnológicos mediante certificaciones y cursos autodidactas.</li>
+            </ul>
+            
+            <div class="hobbies-gallery">
+                <div>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span><img src="games.png" alt="Videojuegos" class="profile-img"></span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cubes"></i>
+                    <span><img src="lego.png" alt="LEGO" class="profile-img"></span>
+                </div>
+                <div>
+                    <i class="fa-brands fa-google"></i>
+                    <span><img src="careers.png" alt="Google Careers" class="profile-img"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Criptografía -->
+        <section id="criptografia">
+            <h3>Acerca de Criptografía: Alan Turing</h3>
+            <p><strong>Alan Mathison Turing</strong> (1912-1954) fue un matemático, lógico, informático teórico, criptógrafo y filósofo británico. Hoy en día es considerado universalmente como uno de los padres fundadores de la ciencia de la computación y precursor indiscutible de la informática moderna y la inteligencia artificial.</p>
+            <p>Durante la Segunda Guerra Mundial, Turing se unió al equipo de Bletchley Park, el centro de criptoanálisis británico. Allí desempeñó un papel crucial y decisivo al liderar la creación de la máquina <em>Bombe</em>, un ingenioso dispositivo electromecánico capaz de descifrar sistemáticamente los complejos mensajes encriptados generados por la máquina <strong>Enigma</strong>, la cual era utilizada por el ejército alemán para proteger sus comunicaciones militares. Sus formidables aportes en criptoanálisis permitieron anticipar movimientos tácticos, acortaron el conflicto bélico por varios años y lograron salvar millones de vidas, demostrando empíricamente el poder absoluto del análisis lógico para quebrar algoritmos criptográficos aparentemente inexpugnables.</p>
+        </section>
+
+        <!-- Documentos -->
+        <section id="documentos">
+            <h3>Descargas y Llaves</h3>
+            <p>En esta sección podrás encontrar mi Currículum Vitae actualizado con mi trayectoria, así como mi llave pública, generada para la implementación segura del algoritmo de cifrado asimétrico RSA.</p>
+            
+            <div class="downloads-container">
+                <a href="Diego_Navarro_Resume.pdf" class="btn-download" download>
+                    <i class="fa-solid fa-file-pdf"></i> Descargar CV
+                </a>
+                <a href="llave.pub" class="btn-download guinda" download>
+                    <i class="fa-solid fa-key"></i> Mi Llave Pública
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Diego Emiliano Navarro Arellano | Práctica de Criptografía - ESCOM IPN</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
